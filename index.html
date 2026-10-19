@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio de Diseño y Producción Creativa Local</title>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --bg-light: #f8fafc;
+            --text-color: #334155;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text-color);
+            background-color: var(--white);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER & NAVEGACIÓN */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tagline-nav {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* SECCIÓN INICIO / HERO */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            color: #64748b;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        /* SECCIONES GENERALES */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+
+        /* SERVICIOS */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* NOSOTROS / EL TALLER */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .about-text ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .about-img {
+            background: #cbd5e1;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #475569;
+            font-weight: 600;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* GALERÍA DE PROYECTOS */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            background: #e2e8f0;
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #475569;
+            font-weight: 600;
+            padding: 1rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            background: #cbd5e1;
+        }
+
+        /* CONTACTO Y UBICACIÓN */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.85rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .map-box {
+            background: #e2e8f0;
+            height: 100%;
+            min-height: 300px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #475569;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        /* BOTÓN FLOTANTE DE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25d366;
+            color: white;
+            padding: 0.85rem 1.25rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20ba5a;
+            transform: scale(1.05);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        @media(max-width: 768px) {
+            .nav-links { display: none; }
+            .about-content, .contact-container { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. IDENTIDAD Y NAVEGACIÓN -->
+    <header>
+        <div class="nav-container">
+            <a href="#inicio" class="logo">
+                🎨 Estudio Creativo
+                <span class="tagline-nav">| Producción Visual Local</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 2. INICIO (HOME) / BANNER PRINCIPAL -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Soluciones Visuales y Diseño Creativo para tu Negocio</h1>
+            <p>Impulsamos la imagen de tu empresa con producción local, acabados profesionales y atención directa en nuestro taller.</p>
+            <div class="cta-buttons">
+                <a href="#servicios" class="btn btn-primary">Ver Servicios</a>
+                <a href="https://wa.me/5500000000?text=Hola,%20me%20gustaría%20solicitar%20una%20cotización" target="_blank" class="btn btn-outline">Cotizar por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SERVICIOS -->
+    <section id="servicios">
+        <h2 class="section-title">Nuestros Servicios Creativos</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Diseño y Branding</h3>
+                <p>Creación de logotipos, manuales de identidad corporativa, diseño de empaques y señalética comercial para posicionar tu marca.</p>
+                <br>
+                <a href="#contacto" class="btn btn-outline" style="font-size: 0.85rem;">Solicitar Informe</a>
+            </div>
+            <div class="service-card">
+                <h3>Animación y Contenido Visual</h3>
+                <p>Clips publicitarios, animación 2D/3D e instructivos audiovisuales para redes sociales y campañas publicitarias.</p>
+                <br>
+                <a href="#contacto" class="btn btn-outline" style="font-size: 0.85rem;">Solicitar Informe</a>
+            </div>
+            <div class="service-card">
+                <h3>Impresión y Prototipado</h3>
+                <p>Impresión en gran formato, maquetación física, material POP y acabados de alta calidad producidos en el taller.</p>
+                <br>
+                <a href="#contacto" class="btn btn-outline" style="font-size: 0.85rem;">Solicitar Informe</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. NOSOTROS (EL TALLER) -->
+    <section id="nosotros" style="background-color: var(--bg-light);">
+        <h2 class="section-title">Sobre Nuestro Estudio Creativo</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Creatividad local con estándares profesionales</h3>
+                <p>Somos un equipo apasionado por la comunicación visual. Contamos con instalaciones equipadas para atender tus proyectos de forma presencial y personalizada.</p>
+                <ul>
+                    <li>Calidad y rigor en acabados finales.</li>
+                    <li>Puntualidad garantizada en cada entrega.</li>
+                    <li>Trato directo y atención transparente.</li>
+                </ul>
+            </div>
+            <div class="about-img">
+                📸 [Fotografía Real del Taller / Instalaciones Equipada]
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. GALERÍA DE PROYECTOS -->
+    <section id="galeria">
+        <h2 class="section-title">Galería de Proyectos Recientes</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <span>Proyecto 1</span>
+                <small>Marca e Identidad para Restaurante</small>
+            </div>
+            <div class="gallery-item">
+                <span>Proyecto 2</span>
+                <small>Banner Publicitario Animado</small>
+            </div>
+            <div class="gallery-item">
+                <span>Proyecto 3</span>
+                <small>Impresión Gran Formato Exposición</small>
+            </div>
+            <div class="gallery-item">
+                <span>Proyecto 4</span>
+                <small>Diseño y Empaque de Producto</small>
+            </div>
+            <div class="gallery-item">
+                <span>Proyecto 5</span>
+                <small>Modelado y Render 3D</small>
+            </div>
+            <div class="gallery-item">
+                <span>Proyecto 6</span>
+                <small>Señalética Comercial Local</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. UBICACIÓN Y CONTACTO -->
+    <section id="contacto" style="background-color: var(--bg-light);">
+        <h2 class="section-title">Visítanos o Contáctanos</h2>
+        <div class="contact-container">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito! Nos pondremos en contacto a la brevedad.');">
+                <div class="form-group">
+                    <input type="text" placeholder="Tu Nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Correo Electrónico o Teléfono" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Describe tu proyecto o solicitud de cotización..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="cursor: pointer; border: none;">Enviar Mensaje</button>
+            </form>
+            <div class="map-box">
+                📍 <strong>Ubicación del Taller:</strong><br>
+                Av. Principal #123, Local 4<br><br>
+                ⏰ <strong>Horario de Atención:</strong><br>
+                Lunes a Viernes: 9:00 - 18:00 hrs<br><br>
+                📞 <strong>Teléfono:</strong> (55) 0000-0000<br><br>
+                <em>[ Mapa Interactivo de Google Maps Embebido ]</em>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/5500000000?text=Hola,%20me%20interesa%20solicitar%20información%20sobre%20sus%20servicios" target="_blank" class="whatsapp-float">
+        💬 WhatsApp
+    </a>
+
+    <!-- FOOTER Y AVISOS LEGALES -->
+    <footer>
+        <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#">Aviso de Privacidad</a></li>
+            <li><a href="#">Términos de Servicio</a></li>
+        </ul>
+        <p class="copyright">&copy; 2026 Estudio de Diseño y Producción Creativa Local. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
